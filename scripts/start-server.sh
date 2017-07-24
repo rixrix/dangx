@@ -1,0 +1,4 @@
+#!/bin/sh
+
+nginx -g 'pid /tmp/nginx.pid;'
+npm start
