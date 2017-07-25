@@ -1,0 +1,12 @@
+version: '3'
+services:
+    dangx:
+        container_name: dangx
+        image: mindginative/dangx
+        build: .
+        ports:
+            - "8080:8080"
+        volumes:
+            - /var/www/dangx/node_modules
+            - .:/var/www/dangx
+            - ./config/nginx.conf:/etc/nginx/nginx.conf
