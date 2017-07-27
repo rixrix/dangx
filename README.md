@@ -8,6 +8,7 @@ This is a simple configuration of running a Node.JS API behind Nginx.
 * Alpine Linux
 * Node.JS
 * Nginx
+* pm2
 
 ## The Setup
 
@@ -22,12 +23,14 @@ This is a simple configuration of running a Node.JS API behind Nginx.
     * eg:
       * http://localhost/api/user/list
       * http://localhost/api/dashboard/list
+* Mounted Folder
+  * routes, models, *.js are mounted onto the container except for some other files/folders, see .dockerignore
+* pm2 manages Node.JS server in `watch` mode. Changes to *.js files triggers a server restart
 
-## How to Run
+## Commands
 
-* Docker Commands
-  * $ docker-compose up            # starts the container
-  * $ docker-compose up --build    # rebuild the image
+* $ docker-compose up            # starts the container
+* $ docker-compose up --build    # rebuild the image
 
 ## References
 
