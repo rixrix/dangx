@@ -14,9 +14,10 @@ ADD package.json package.json
 ADD scripts scripts
 ADD config/nginx.conf /etc/nginx/nginx.conf
 
-RUN npm install
-RUN chmod +x ./scripts/start-server.sh
+RUN npm install pm2 -g && \
+    npm install
+RUN chmod +x ./scripts/docker-cmd-start.sh
 
 EXPOSE 8080
 
-CMD ["./scripts/start-server.sh"]
+CMD ["./scripts/docker-cmd-start.sh"]
